@@ -1,15 +1,21 @@
 public class Main {
   public static void main(String[] args) {
-    Pokemon pikachu = new Pokemon("pikachu");
-    Pokemon pikachu2 = new Pokemon("Eve");
+    Pokemon pikachu = new Pokemon("Pikachu", 1, 5);
+    Pokemon eevee = new Pokemon("Eevee");
 
-
-    int pocao = 100;
-    System.out.println(pikachu);
-    System.out.println(pikachu2);
-    System.out.println(pikachu.taVivo());
-    pikachu.curar(pocao);
-    System.out.println(pikachu.taVivo());
-    pikachu.atacar(1, pikachu);
+    Treinador ash = new Treinador("Ash");
+    System.out.println(ash.nome + "[" + ash.x + "," + ash.y + "]");
+    ash.mover("baixo");
+    System.out.println(ash.nome + "[" + ash.x + "," + ash.y + "]");
+    ash.listar();
+    ash.capturar(pikachu);
+    ash.capturar(pikachu);
+    ash.capturar(eevee);
+    if(ash.capturar(pikachu) == false) {
+      System.out.println("A bolsa está cheia");
+    }
+    ash.listar();
+    System.out.println(Pokemon.contador);
   }
+
 }

@@ -1,5 +1,6 @@
 public class Pokemon {
-  String nome = "Pikachu";
+  static int contador;
+  String nome;
   String tipo;
   int nivel;
   int pontosDeVida;
@@ -8,11 +9,24 @@ public class Pokemon {
   int velocidade;
   int experiencia;
 
+
   Pokemon(String nome) {
-    super();
+    contador++;
     this.nome = nome;
-    System.out.println("Iniciando...");
+    this.nivel = 1;
+    this.ataque = (int) (Math.random()*100);
   }
+
+  Pokemon(String nome, int nivel) {
+    this(nome);
+    this.nivel = nivel;
+  }
+
+  Pokemon(String nome, int nivel, int pontosDeVida) {
+    this(nome, nivel);
+    this.pontosDeVida = pontosDeVida;
+  }
+
 
   String falar() {
     return nome + " " + nome;
@@ -40,7 +54,7 @@ public class Pokemon {
   @Override
   public String toString() {
     return "Pokemon{" +
-            "nome='" + nome + '\'' +
+            "nome='" + nome + "[" + nivel + "]" + '\'' +
             ", pontosDeVida=" + pontosDeVida +
             ", ataque=" + ataque +
             ", defesa=" + defesa +
