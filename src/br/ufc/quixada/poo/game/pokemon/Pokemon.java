@@ -1,3 +1,5 @@
+package br.ufc.quixada.poo.game.pokemon;
+
 public class Pokemon {
   static int contador;
   String nome;
@@ -10,34 +12,34 @@ public class Pokemon {
   int experiencia;
 
 
-  Pokemon(String nome) {
+  public Pokemon(String nome) {
     contador++;
     this.nome = nome;
     this.nivel = 1;
     this.ataque = (int) (Math.random()*100);
   }
 
-  Pokemon(String nome, int nivel) {
+  public Pokemon(String nome, int nivel) {
     this(nome);
     this.nivel = nivel;
   }
 
-  Pokemon(String nome, int nivel, int pontosDeVida) {
+  public Pokemon(String nome, int nivel, int pontosDeVida) {
     this(nome, nivel);
     this.pontosDeVida = pontosDeVida;
   }
 
 
-  String falar() {
+  public String falar() {
     return nome + " " + nome;
   }
 
-  int curar(int pontosDeVida) {
+  public int curar(int pontosDeVida) {
     this.pontosDeVida += pontosDeVida;
     return this.pontosDeVida;
   }
 
-  void atacar(int movimento, Pokemon alvo) {
+  public void atacar(int movimento, Pokemon alvo) {
     if (taVivo()) {
       //ataque!
       System.out.println("Atacando o " + alvo + " com ataque" + movimento);
@@ -46,7 +48,7 @@ public class Pokemon {
     }
   }
 
-  boolean taVivo() {
+  private boolean taVivo() {
     return this.pontosDeVida > 0;
   }
   
