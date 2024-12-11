@@ -29,6 +29,9 @@ public class Pokemon {
     this.pontosDeVida = pontosDeVida;
   }
 
+  public String getNome() {
+    return nome;
+  }
 
   public String falar() {
     return nome + " " + nome;

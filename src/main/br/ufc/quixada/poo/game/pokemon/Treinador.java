@@ -26,30 +26,16 @@ public class Treinador {
     return y;
   }
 
+  public void setPosicao(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+
   public void listar() {
     for(Pokemon pokemon: pokemons) {
       if(pokemon != null) {
         System.out.println(pokemon.nome);
       }
-    }
-  }
-
-  public void mover(String direcao) {
-    switch (direcao) {
-      case "cima":
-        y--;
-        break;
-      case "baixo":
-        y++;
-        break;
-      case "esq":
-        x--;
-        break;
-      case "dir":
-        x++;
-        break;
-      default:
-        System.out.println("Direção inválida");
     }
   }
 
