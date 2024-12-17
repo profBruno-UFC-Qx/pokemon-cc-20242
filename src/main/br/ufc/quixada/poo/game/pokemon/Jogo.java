@@ -20,6 +20,16 @@ public class Jogo {
       System.out.println("Para onde quer ir? c, b, f, t ou sair");
       opcao = scanner.nextLine();
       mapa.moverTreinador(treinador, opcao);
+      if(mapa.encontrouPokemon(treinador)) {
+        Pokemon encontrado = Encontro.getRandomPokemon();
+        Batalha batalha = new Batalha(treinador, encontrado);
+        batalha.iniciar();
+        do {
+          batalha.proximoTurno();
+        } while(!batalha.terminou());
+      }
     } while(!opcao.equals("sair"));
+
+
   }
 }

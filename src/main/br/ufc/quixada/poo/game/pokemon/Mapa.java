@@ -30,7 +30,7 @@ public class Mapa {
   }
 
   public void exibirMapa(int x, int y) {
-    String aux = layout[x][y];
+    String aux = layout[y][x];
     layout[y][x] = " T ";
     for (int i = 0; i < this.largura; i++) {
       System.out.print('|');
@@ -61,12 +61,17 @@ public class Mapa {
         x = Math.min(largura - 1, ++x);
         break;
       case "sair":
+        treinador.listar();
         System.exit(0);
       default:
         System.out.println("Direção inválida");
         break;
     }
     treinador.setPosicao(x, y);
+  }
+
+  public boolean encontrouPokemon(Treinador treinador) {
+    return layout[treinador.getY()][treinador.getX()].equals(" w ") && Math.random() > 0.5;
   }
 
 }

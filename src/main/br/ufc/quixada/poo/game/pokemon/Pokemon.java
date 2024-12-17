@@ -2,20 +2,20 @@ package br.ufc.quixada.poo.game.pokemon;
 
 public class Pokemon {
   static int contador;
-  String nome;
-  String tipo;
-  int nivel;
-  int pontosDeVida;
-  int ataque;
-  int defesa;
-  int velocidade;
-  int experiencia;
+  private String nome;
+  private String tipo;
+  private int nivel;
+  private int pontosDeVida;
+  private int ataque;
+  private int defesa;
+  private int velocidade;
+  private int experiencia;
 
 
   public Pokemon(String nome) {
     contador++;
     this.nome = nome;
-    this.nivel = 1;
+    this.nivel = 5;
     this.ataque = (int) (Math.random()*100);
   }
 
@@ -35,6 +35,10 @@ public class Pokemon {
 
   public String falar() {
     return nome + " " + nome;
+  }
+
+  public int getNivel() {
+    return nivel;
   }
 
   public int curar(int pontosDeVida) {
