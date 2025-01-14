@@ -12,6 +12,7 @@ public class Pokemon {
   private int velocidade;
   private int experiencia;
   private int peso;
+  private int amizade;
 
 
   public Pokemon(String nome) {
@@ -37,16 +38,52 @@ public class Pokemon {
     return nome;
   }
 
-  public String falar() {
-    return nome + " " + nome;
+  public int getHpMax() {
+    return hpMax;
+  }
+
+  public int getHpAtual() {
+    return this.hpAtual;
+  }
+
+  public int getTaxaDeCaptura() {
+    return taxaDeCaptura;
+  }
+
+  public int getVelocidade() {
+    return this.velocidade;
+  }
+
+  public int getPeso() {
+    return this.peso;
   }
 
   public int getNivel() {
     return nivel;
   }
 
+  public String falar() {
+    return nome + " " + nome;
+  }
+
+  public void setAmizade(int amizade) {
+    this.amizade = amizade;
+  }
+
+  public void setHpAtual(int hp) {
+    hpAtual = hp + hpAtual;
+
+    if(hpAtual > hpMax) {
+        hpAtual = hpMax;
+    }
+
+    if (hpAtual < 0) {
+        hpAtual = 0;
+    }
+  }
+
   public int curar(int pontosDeVida) {
-    this.hpAtual += pontosDeVida;
+    setHpAtual(pontosDeVida);
     return this.hpAtual;
   }
 
@@ -74,4 +111,6 @@ public class Pokemon {
             ", velocidade=" + velocidade  +
             '}';
   }
+
+
 }

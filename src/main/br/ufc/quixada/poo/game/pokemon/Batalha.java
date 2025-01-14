@@ -1,6 +1,7 @@
 package br.ufc.quixada.poo.game.pokemon;
 
-import java.util.Random;
+import br.ufc.quixada.poo.game.pokemon.pokebolas.Pokebola;
+
 import java.util.Scanner;
 
 public class Batalha {

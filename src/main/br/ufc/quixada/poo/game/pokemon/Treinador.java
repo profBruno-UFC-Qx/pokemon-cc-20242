@@ -1,5 +1,8 @@
 package br.ufc.quixada.poo.game.pokemon;
 
+import br.ufc.quixada.poo.game.pokemon.pokebolas.MasterBall;
+import br.ufc.quixada.poo.game.pokemon.pokebolas.Pokebola;
+
 public class Treinador {
 
   private String nome;
