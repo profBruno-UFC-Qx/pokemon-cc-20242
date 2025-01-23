@@ -4,7 +4,7 @@ public class Mapa {
 
   private final int largura;
   private final int altura;
-  private String[][] layout;
+  private final String[][] layout;
 
   public Mapa(int largura, int altura) {
     this.largura = largura;
@@ -61,7 +61,6 @@ public class Mapa {
         x = Math.min(largura - 1, ++x);
         break;
       case "sair":
-        treinador.listar();
         System.exit(0);
       default:
         System.out.println("Direção inválida");
