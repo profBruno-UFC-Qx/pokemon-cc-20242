@@ -1,5 +1,7 @@
 package br.ufc.quixada.poo.game.pokemon;
 
+import java.util.Objects;
+
 public class Pokemon {
   private final int especie;
   private final String nome;
@@ -102,7 +104,19 @@ public class Pokemon {
   private boolean taVivo() {
     return this.hpAtual > 0;
   }
-  
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Pokemon pokemon = (Pokemon) o;
+    return especie == pokemon.especie && nivel == pokemon.nivel && hpBase == pokemon.hpBase && hpMax == pokemon.hpMax && hpAtual == pokemon.hpAtual && taxaDeCaptura == pokemon.taxaDeCaptura && velocidade == pokemon.velocidade && experiencia == pokemon.experiencia && amizade == pokemon.amizade && ataqueBase == pokemon.ataqueBase && defesaBase == pokemon.defesaBase && Double.compare(peso, pokemon.peso) == 0 && Objects.equals(nome, pokemon.nome);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(especie, nome, nivel, hpBase, hpMax, hpAtual, taxaDeCaptura, velocidade, experiencia, amizade, ataqueBase, defesaBase, peso);
+  }
 
   @Override
   public String toString() {

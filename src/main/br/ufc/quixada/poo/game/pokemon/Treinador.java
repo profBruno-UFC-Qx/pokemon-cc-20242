@@ -1,5 +1,6 @@
 package br.ufc.quixada.poo.game.pokemon;
 
+import br.ufc.quixada.poo.game.Pokedex;
 import br.ufc.quixada.poo.game.pokemon.pokebolas.MasterBall;
 import br.ufc.quixada.poo.game.pokemon.pokebolas.Pokebola;
 
@@ -8,14 +9,14 @@ public class Treinador {
   private String nome;
   private int x;
   private int y;
-  private Pokemon[] pokemons;
-  private Pokebola[] pokebolas = {new MasterBall(), new MasterBall(), new MasterBall()};
+  private Pokedex pokedex;
+  private Pokebola[] pokebolas = {new Pokebola(), new Pokebola(), new MasterBall()};
 
-  public Treinador(String nome) {
+  public Treinador(String nome, Pokedex pokedex) {
     this.nome = nome;
     this.x = 0;
     this.y = 0;
-    this.pokemons = new Pokemon[3];
+    this.pokedex = pokedex;
   }
 
   public String getNome() {
@@ -33,24 +34,6 @@ public class Treinador {
   public void setPosicao(int x, int y) {
     this.x = x;
     this.y = y;
-  }
-
-  public void listar() {
-    for(Pokemon pokemon: pokemons) {
-      if(pokemon != null) {
-        System.out.println(pokemon.getNome());
-      }
-    }
-  }
-
-  public boolean capturar(Pokemon pokemon) {
-    for(int i = 0; i < pokemons.length; i++) {
-      if(pokemons[i] == null) {
-        pokemons[i] = pokemon;
-        return true;
-      }
-    }
-    return false;
   }
 
   public boolean temPokebola() {
@@ -72,13 +55,7 @@ public class Treinador {
   }
 
 
-
-
-
-
-
-
-
-
-
+  public Pokedex getPokedex() {
+    return pokedex;
+  }
 }

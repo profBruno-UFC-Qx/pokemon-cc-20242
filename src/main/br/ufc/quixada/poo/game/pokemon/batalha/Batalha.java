@@ -19,6 +19,7 @@ public class Batalha {
 
   public void iniciar() {
     System.out.println("Você encontrou um " + pokemon.getNome() + "!");
+    treinador.getPokedex().registrarEncontro(pokemon);
   }
 
   public boolean terminou() {
@@ -61,14 +62,9 @@ public class Batalha {
     //System.out.println("Chance de captura: " + chanceCaptura + "%");
 
     if (pokebola.capturar(pokemon)) {
-      boolean capturado = treinador.capturar(pokemon);
-      if (capturado) {
-        System.out.println("Parabéns! Você capturou " + pokemon.getNome());
-        return true;
-      } else {
-        System.out.println("Você não tem espaço suficiente para capturar mais Pokémons.");
-        return false;
-      }
+      treinador.getPokedex().registrarCaptura(pokemon);
+      System.out.println("Parabéns! Você capturou " + pokemon.getNome());
+      return true;
     } else {
       System.out.println("A captura falhou! O Pokémon quebrou a pokebola.");
       return false;
