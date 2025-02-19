@@ -51,6 +51,22 @@ public class Pokemon {
     return this.hpAtual;
   }
 
+  public int getHpBase() {
+    return hpBase;
+  }
+
+  public int getAtaqueBase() {
+    return ataqueBase;
+  }
+
+  public int getDefesaBase() {
+    return defesaBase;
+  }
+
+  public int getAmizade() {
+    return amizade;
+  }
+
   public int getTaxaDeCaptura() {
     return taxaDeCaptura;
   }

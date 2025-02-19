@@ -2,6 +2,7 @@ package br.ufc.quixada.poo.game.pokemon;
 
 import br.ufc.quixada.poo.game.MenuPokedex;
 import br.ufc.quixada.poo.game.Pokedex;
+import br.ufc.quixada.poo.game.PokedexManager;
 import br.ufc.quixada.poo.game.pokemon.batalha.Batalha;
 
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Jogo {
   private final Treinador treinador;
 
   public Jogo(String nome) {
-    treinador = new Treinador(nome, new Pokedex());
+    treinador = new Treinador(nome, PokedexManager.carregarPokedex());
     mapa = new Mapa(10, 10);
   }
 

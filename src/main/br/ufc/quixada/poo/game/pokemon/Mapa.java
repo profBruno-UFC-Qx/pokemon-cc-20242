@@ -1,5 +1,8 @@
 package br.ufc.quixada.poo.game.pokemon;
 
+import br.ufc.quixada.poo.game.Pokedex;
+import br.ufc.quixada.poo.game.PokedexManager;
+
 public class Mapa {
 
   private final int largura;
@@ -61,6 +64,7 @@ public class Mapa {
         x = Math.min(largura - 1, ++x);
         break;
       case "sair":
+        PokedexManager.salvarPokedex(treinador.getPokedex());
         System.exit(0);
       default:
         System.out.println("Direção inválida");

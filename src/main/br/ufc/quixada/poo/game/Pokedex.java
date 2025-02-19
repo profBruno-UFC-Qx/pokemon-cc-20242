@@ -14,6 +14,11 @@ public class Pokedex implements Registravel {
     capturados = new ArrayList<>();
   }
 
+  public Pokedex(List<Pokemon> capturados, int ocorrencias[]) {
+    this.capturados = capturados;
+    this.ocorrencias = ocorrencias;
+  }
+
   @Override
   public void registrarEncontro(Pokemon pokemon) {
     int posicaoPokemon = pokemon.getEspecie() - 1;
@@ -52,6 +57,10 @@ public class Pokedex implements Registravel {
   public double taxaDeSucess(EspeciePokemon pokemon) {
     long capturados =  contarCapturasPorEspecie(pokemon);
     return (capturados/ocorrencias[pokemon.ordinal()])*100;
+  }
+
+  public int[] getOcorrencias() {
+    return ocorrencias;
   }
 }
 
